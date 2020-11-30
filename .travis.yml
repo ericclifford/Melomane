@@ -29,6 +29,8 @@ before_script:
 - android-wait-for-emulator
 - adb shell input keyevent 82 &
 - chmod +x gradlew
-script: 
+script: "./gradlew connectedAndroidTest"
+before_install:
 - "./gradlew connectedAndroidTest"
-- build-scripts/travis_build.sh $TRAVIS_BUILD_DIR
+- openssl aes-256-cbc -K $encrypted_4544b01bec60_key -iv $encrypted_4544b01bec60_iv
+  -in keystores.jks.enc -out keystores.jks -d

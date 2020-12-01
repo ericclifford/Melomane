@@ -4,7 +4,6 @@ sudo: false
 before install:
 - echo yes | sdkmanager "build-tools;30.0.2"
 - echo yes | sdkmanager "platforms;android-30"
-
 android:
   components:
   - platform-tools
@@ -27,3 +26,7 @@ before_script:
 - adb shell input keyevent 82 &
 - chmod +x gradlew
 script: "./gradlew connectedAndroidTest"
+deploy:
+  provider: heroku
+  api_key:
+    secure: J0xSdBy+pA7oruBmWQqgqUkmrug9KV32TAXtEQ8Vy7F0Z6UZxghL0cxy1KxtEDK8LC2nW622dVvUztAUANllJdEtzkNrPV80N0X48OoRB5bbq8MfQcK9OK8ZiJ+AUB5+OStvdtRPWmBoNiaTg+IWZoS1eqtrER+7g+POXuRn5mPdRCMEhDlcdqpW4zywKApVv8Ot0mn1gmu1cmku8+vjgUYL1c1p7bliKZi1y1/KRYmLkJv8cyRv3COj2Y19rpU/Ni2QUqax29ufc2fJfIEpwPMherYYf0HnTToJMBNFLXEb5+/n1n3x2WOaQaIqe4PnI6uNGoHmspuV23sqFM333ytIa3m7BYLCN3HfLsjrnOBpteFLVwses6nuHD/3zqZVJkzBhCUHM87yiE+yoW9UiUCin8Y0oQ8Jf0rIHhcEa0ogLjlpLkIHUXe0t4hBl1c9dzn9ggR7nI0B6RUlusNve3yAfopGQND49Mode4ClMWwOwK4YgfIiokVxgyrVfiWQlpJ3TTPKaAemnwrNNAxICEwZ43gM7dYxDdahjIPPnxdGICbX8k4OKNJZAkE+GGm1g01jLoVJtldHXW7/SbdsiuxmGzE2bP1r+HM2OCo6mvGpsrGGtfTmBQi83rI3f2Y6Uam5ekO3Y2oHsYxGI9nQxAekUioV7kbZnEFnK4vCkEU=
